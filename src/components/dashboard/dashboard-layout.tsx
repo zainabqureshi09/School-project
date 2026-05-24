@@ -6,9 +6,15 @@ import { DashboardHeader } from "./header"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion, AnimatePresence } from "framer-motion"
 
+interface SidebarItem {
+  label: string
+  icon: React.ElementType
+  href: string
+}
+
 interface DashboardLayoutProps {
   children: React.ReactNode
-  sidebarItems: any[]
+  sidebarItems: SidebarItem[]
   roleName: string
 }
 

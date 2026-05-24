@@ -64,6 +64,14 @@ export function CommandMenu() {
               <span>Go to Dashboard</span>
             </CommandItem>
             <CommandItem>
+              <BookOpen className="mr-2 h-4 w-4" />
+              <span>Browse Classes</span>
+            </CommandItem>
+            <CommandItem>
+              <Zap className="mr-2 h-4 w-4" />
+              <span>Join Live Session</span>
+            </CommandItem>
+            <CommandItem>
               <Calendar className="mr-2 h-4 w-4" />
               <span>Schedule Session</span>
             </CommandItem>

@@ -2,179 +2,289 @@
 
 import { Navbar } from "@/components/shared/navbar"
 import { Footer } from "@/components/shared/footer"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { ClassesHero } from "@/components/classes/classes-hero"
+import { ClassesFilters } from "@/components/classes/classes-filters"
+import { ClassCardPremium } from "@/components/classes/class-card-premium"
 import { motion } from "framer-motion"
-import { Video, Users, Calendar, Clock, Star, Play, Search, ArrowRight } from "lucide-react"
+import { LayoutGrid, List, SlidersHorizontal, Sparkles, ArrowUpRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { 
+  DropdownMenu, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuTrigger 
+} from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
 
 const classes = [
   {
     id: 1,
-    title: "Mastering React Server Components",
+    title: "Mastering React Server Components & Next.js 15",
     instructor: "Michael Chen",
+    instructorImage: "https://i.pravatar.cc/150?u=michael",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=1000",
     date: "May 25, 2026",
     time: "6:00 PM EST",
     duration: "90 min",
-    students: 45,
-    price: 25,
+    students: 142,
+    price: 49,
     rating: 5.0,
     category: "Technology",
+    isLive: true,
+    difficulty: "Advanced",
   },
   {
     id: 2,
-    title: "SAT Math: Advanced Strategy",
+    title: "Advanced SAT Mathematics: Strategies for a 1600",
     instructor: "Dr. Sarah Johnson",
+    instructorImage: "https://i.pravatar.cc/150?u=sarah",
     image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000",
     date: "May 26, 2026",
     time: "4:00 PM EST",
     duration: "120 min",
-    students: 120,
-    price: 15,
+    students: 89,
+    price: 35,
     rating: 4.9,
     category: "Education",
+    isLive: false,
+    difficulty: "Expert",
   },
   {
     id: 3,
-    title: "Spanish for Business Professionals",
+    title: "Business Spanish: Communication for Professionals",
     instructor: "Elena Rodriguez",
+    instructorImage: "https://i.pravatar.cc/150?u=elena",
     image: "https://images.unsplash.com/photo-1543165796-5426273eaec3?auto=format&fit=crop&q=80&w=1000",
     date: "May 27, 2026",
     time: "7:00 PM EST",
     duration: "60 min",
-    students: 22,
-    price: 20,
+    students: 45,
+    price: 29,
     rating: 4.8,
     category: "Languages",
+    isLive: true,
+    difficulty: "Intermediate",
+  },
+  {
+    id: 4,
+    title: "Data Science Fundamentals with Python",
+    instructor: "David Miller",
+    instructorImage: "https://i.pravatar.cc/150?u=david",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+    date: "May 28, 2026",
+    time: "5:00 PM EST",
+    duration: "95 min",
+    students: 112,
+    price: 45,
+    rating: 4.9,
+    category: "Technology",
+    isLive: false,
+    difficulty: "Beginner",
+  },
+  {
+    id: 5,
+    title: "Creative Writing: Building Immersive Worlds",
+    instructor: "Aria Thorne",
+    instructorImage: "https://i.pravatar.cc/150?u=aria",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1000",
+    date: "May 29, 2026",
+    time: "6:30 PM EST",
+    duration: "75 min",
+    students: 64,
+    price: 19,
+    rating: 4.7,
+    category: "Creative Arts",
+    isLive: true,
+    difficulty: "Intermediate",
+  },
+  {
+    id: 6,
+    title: "Quantum Physics for Beginners",
+    instructor: "Prof. Alan Turing",
+    instructorImage: "https://i.pravatar.cc/150?u=alan",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=1000",
+    date: "May 30, 2026",
+    time: "2:00 PM EST",
+    duration: "110 min",
+    students: 130,
+    price: 55,
+    rating: 5.0,
+    category: "Science",
+    isLive: false,
+    difficulty: "Advanced",
   }
 ]
 
 export default function ClassesPage() {
   return (
-    <main className="min-h-screen pt-24">
+    <main className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="py-24 bg-primary text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-3xl">
-            <Badge className="bg-white/20 text-white border-none mb-6 px-4 py-1.5 font-bold">LIVE INTERACTIVE CLASSES</Badge>
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-black mb-8 leading-tight"
-            >
-              Learn Together in <br />
-              <span className="text-white/70 italic underline decoration-white/30">Elite Group Sessions</span>
-            </motion.h1>
-            <p className="text-xl text-primary-foreground/80 mb-10 leading-relaxed">
-              Join live, highly interactive classes led by world-class instructors. 
-              Real-time collaboration, peer learning, and expert guidance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-               <div className="relative flex-1 max-w-md text-black">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input placeholder="Search live classes..." className="h-14 pl-12 rounded-2xl bg-white border-none" />
-               </div>
-               <Button size="lg" variant="secondary" className="h-14 px-10 rounded-2xl font-black text-lg">
-                  Explore All
-               </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClassesHero />
 
-      {/* Featured Classes */}
-      <section className="py-24">
+      {/* Main Content Area */}
+      <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex justify-between items-end mb-12">
-             <div>
-                <h2 className="text-3xl md:text-5xl font-black mb-4">Upcoming <span className="text-primary">Live Classes</span></h2>
-                <p className="text-muted-foreground text-lg">Book your spot in our most popular upcoming sessions.</p>
-             </div>
-             <Button variant="ghost" className="font-bold text-primary gap-2 hidden md:flex">
-                View Schedule <ArrowRight className="h-4 w-4" />
-             </Button>
-          </div>
+          <div className="flex flex-col lg:flex-row gap-12">
+            
+            {/* Sidebar Filters */}
+            <div className="hidden lg:block">
+              <ClassesFilters />
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {classes.map((c, i) => (
-              <motion.div
-                key={c.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="group bg-background rounded-[3rem] border border-muted/20 overflow-hidden shadow-2xl shadow-primary/5 hover:border-primary/30 transition-all"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                   <img src={c.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={c.title} />
-                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                   <div className="absolute top-6 left-6">
-                      <Badge className="bg-white/20 backdrop-blur-md text-white border-none px-3 py-1 font-bold">
-                         {c.category}
-                      </Badge>
-                   </div>
-                   <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center text-white">
-                      <div className="flex items-center gap-2 font-bold text-sm">
-                         <Users className="h-4 w-4 text-primary" /> {c.students} Joined
-                      </div>
-                      <div className="flex items-center gap-1.5 text-yellow-400 font-bold text-sm">
-                         <Star className="h-4 w-4 fill-current" /> {c.rating}
-                      </div>
-                   </div>
+            {/* Content Column */}
+            <div className="flex-1 space-y-8">
+              
+              {/* Header & View Controls */}
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-accent/30 p-6 rounded-[2rem] border">
+                <div>
+                   <h2 className="text-2xl font-black flex items-center gap-2">
+                      <Sparkles className="h-5 w-5 text-primary" />
+                      Showing <span className="text-primary">{classes.length}</span> Premium Classes
+                   </h2>
+                   <p className="text-sm text-muted-foreground font-bold">Based on your current filters and interests.</p>
                 </div>
-
-                <div className="p-8 space-y-6">
-                   <div>
-                      <div className="flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest mb-2">
-                         <Calendar className="h-3.5 w-3.5" /> {c.date} • {c.time}
-                      </div>
-                      <h3 className="text-2xl font-black group-hover:text-primary transition-colors line-clamp-1">{c.title}</h3>
-                      <p className="text-sm text-muted-foreground mt-2 font-medium">with <span className="text-foreground font-bold">{c.instructor}</span></p>
+                
+                <div className="flex items-center gap-3">
+                   <div className="flex bg-background rounded-xl p-1 border">
+                      <Button variant="ghost" size="sm" className="h-9 w-9 p-0 rounded-lg bg-primary/10 text-primary">
+                         <LayoutGrid className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm" className="h-9 w-9 p-0 rounded-lg text-muted-foreground">
+                         <List className="h-4 w-4" />
+                      </Button>
                    </div>
-
-                   <div className="flex items-center justify-between pt-6 border-t">
-                      <div className="flex items-center gap-2 text-muted-foreground text-sm font-bold">
-                         <Clock className="h-4 w-4" /> {c.duration}
-                      </div>
-                      <div className="flex items-center gap-3">
-                         <span className="text-2xl font-black text-primary">${c.price}</span>
-                         <Button className="rounded-xl font-black shadow-lg shadow-primary/10 px-6">Book Spot</Button>
-                      </div>
-                   </div>
+                   
+                   <DropdownMenu>
+                      <DropdownMenuTrigger>
+                         <Button variant="outline" className="h-11 rounded-xl font-bold gap-2">
+                            Sort by: <span className="text-primary">Newest First</span>
+                            <SlidersHorizontal className="h-4 w-4" />
+                         </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" className="w-56 rounded-xl p-2">
+                         <DropdownMenuItem className="rounded-lg font-bold">Price: Low to High</DropdownMenuItem>
+                         <DropdownMenuItem className="rounded-lg font-bold">Price: High to Low</DropdownMenuItem>
+                         <DropdownMenuItem className="rounded-lg font-bold">Popularity</DropdownMenuItem>
+                         <DropdownMenuItem className="rounded-lg font-bold">Rating</DropdownMenuItem>
+                      </DropdownMenuContent>
+                   </DropdownMenu>
+                   
+                   <Button variant="outline" className="lg:hidden h-11 rounded-xl font-bold">
+                      Filters
+                   </Button>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+
+              {/* Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {classes.map((c) => (
+                  <ClassCardPremium key={c.id} {...c} />
+                ))}
+              </div>
+
+              {/* Pagination / Load More */}
+              <div className="pt-12 flex justify-center">
+                 <Button variant="outline" size="lg" className="h-16 px-12 rounded-[1.5rem] text-lg font-black border-2 hover:bg-primary hover:text-white transition-all">
+                    Load More Classes
+                 </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-         <div className="container mx-auto px-4 md:px-6">
-            <div className="bg-accent/30 p-12 md:p-24 rounded-[4rem] text-center border-2 border-primary/10 relative overflow-hidden group">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -z-10 group-hover:bg-primary/10 transition-colors" />
-               <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
-                  Hosting an Event? <br />
-                  <span className="text-primary underline decoration-primary/20">Become an Instructor</span>
-               </h2>
-               <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-                  Share your expertise with a global audience. Our platform provides the best-in-class tools 
-                  for high-fidelity video classes and student engagement.
-               </p>
-               <div className="flex justify-center gap-6">
-                  <Button size="lg" className="h-16 px-12 rounded-2xl text-xl font-black shadow-2xl shadow-primary/20">
-                     Apply to Teach
-                  </Button>
-                  <Button size="lg" variant="outline" className="h-16 px-12 rounded-2xl text-xl font-black border-2 hidden sm:flex">
-                     Learn More
-                  </Button>
-               </div>
-            </div>
-         </div>
+      {/* Recommended for You Bento Section */}
+      <section className="py-24 bg-accent/10 relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6">
+           <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-black mb-4">Recommended for <span className="text-primary italic">You</span></h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-medium">
+                Our AI-driven engine suggests these classes based on your learning history and interests.
+              </p>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 h-auto md:h-[600px]">
+              <div className="md:col-span-2 lg:col-span-3 bg-background rounded-[3rem] border-2 border-primary/10 p-10 flex flex-col justify-between group hover:border-primary/40 transition-all cursor-pointer overflow-hidden relative">
+                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] group-hover:bg-primary/10 transition-colors" />
+                 <div>
+                    <Badge className="bg-primary/10 text-primary mb-6">MOST RELEVANT</Badge>
+                    <h3 className="text-4xl font-black mb-6 leading-tight">Advanced AI Engineering with <span className="text-primary">Large Language Models</span></h3>
+                    <p className="text-muted-foreground text-lg font-medium leading-relaxed">Master the latest techniques in LLM orchestration, prompt engineering, and fine-tuning.</p>
+                 </div>
+                 <div className="flex items-center justify-between mt-8 relative z-10">
+                    <div className="flex items-center gap-3">
+                       <Avatar className="h-12 w-12 border-2 border-primary/20">
+                          <AvatarImage src="https://i.pravatar.cc/150?u=tech" />
+                          <AvatarFallback>AI</AvatarFallback>
+                       </Avatar>
+                       <div>
+                          <p className="font-black">Dr. Julian Voss</p>
+                          <p className="text-xs font-bold text-muted-foreground uppercase">AI Researcher @ OpenAI</p>
+                       </div>
+                    </div>
+                    <Button size="icon" className="h-14 w-14 rounded-2xl group-hover:scale-110 transition-transform">
+                       <ArrowUpRight className="h-6 w-6" />
+                    </Button>
+                 </div>
+              </div>
+              
+              <div className="md:col-span-2 lg:col-span-3 bg-primary rounded-[3rem] p-10 text-white flex flex-col justify-between group cursor-pointer relative overflow-hidden">
+                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
+                 <div>
+                    <Badge className="bg-white/20 text-white border-none mb-6">FAST TRACK</Badge>
+                    <h3 className="text-4xl font-black mb-6 leading-tight text-white">The Complete <span className="text-white/60">Digital Marketing</span> Bootcamp</h3>
+                    <p className="text-primary-foreground/80 text-lg font-medium leading-relaxed">Go from zero to pro in digital marketing strategies, SEO, and paid advertising.</p>
+                 </div>
+                 <div className="mt-8 flex items-center justify-between">
+                    <div className="flex -space-x-4">
+                       {[1,2,3].map(i => (
+                         <Avatar key={i} className="h-12 w-12 border-4 border-primary">
+                            <AvatarImage src={`https://i.pravatar.cc/150?u=${i+30}`} />
+                         </Avatar>
+                       ))}
+                       <div className="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center font-black text-sm border-4 border-primary">
+                          +12
+                       </div>
+                    </div>
+                    <Button variant="secondary" className="h-14 px-8 rounded-2xl font-black text-lg">
+                       Enroll $29
+                    </Button>
+                 </div>
+              </div>
+
+              <div className="md:col-span-2 lg:col-span-2 bg-background rounded-[3rem] border-2 border-muted/20 p-8 flex flex-col justify-between hover:border-primary/30 transition-all cursor-pointer">
+                 <div className="bg-purple-500/10 text-purple-600 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
+                    <LayoutGrid className="h-6 w-6" />
+                 </div>
+                 <h4 className="text-2xl font-black mb-2">Modern UX/UI Design</h4>
+                 <p className="text-muted-foreground text-sm font-bold mb-6">Build pixel-perfect interfaces that delight users.</p>
+                 <div className="flex items-center gap-2 text-primary font-black">
+                    $19 <ArrowUpRight className="h-4 w-4" />
+                 </div>
+              </div>
+
+              <div className="md:col-span-2 lg:col-span-2 bg-background rounded-[3rem] border-2 border-muted/20 p-8 flex flex-col justify-between hover:border-primary/30 transition-all cursor-pointer">
+                 <div className="bg-emerald-500/10 text-emerald-600 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
+                    <Sparkles className="h-6 w-6" />
+                 </div>
+                 <h4 className="text-2xl font-black mb-2">Public Speaking Mastery</h4>
+                 <p className="text-muted-foreground text-sm font-bold mb-6">Command the stage and speak with confidence.</p>
+                 <div className="flex items-center gap-2 text-primary font-black">
+                    $25 <ArrowUpRight className="h-4 w-4" />
+                 </div>
+              </div>
+
+              <div className="md:col-span-4 lg:col-span-2 bg-accent/30 rounded-[3rem] border-2 border-dashed border-primary/20 p-8 flex flex-col items-center justify-center text-center group cursor-pointer hover:bg-primary/5 transition-all">
+                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                    <List className="h-8 w-8" />
+                 </div>
+                 <h4 className="text-2xl font-black mb-2">See Your Roadmap</h4>
+                 <p className="text-muted-foreground text-sm font-bold">Personalized learning paths designed just for you.</p>
+              </div>
+           </div>
+        </div>
       </section>
 
       <Footer />

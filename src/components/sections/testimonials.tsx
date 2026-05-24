@@ -68,7 +68,7 @@ export function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-lg italic mb-8 relative z-10">"{testimonial.content}"</p>
+              <p className="text-lg italic mb-8 relative z-10">&quot;{testimonial.content}&quot;</p>
 
               <div className="mt-auto flex items-center gap-4">
                 <Avatar className="h-12 w-12 border-2 border-primary/20">

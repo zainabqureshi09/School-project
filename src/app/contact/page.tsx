@@ -18,7 +18,7 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Get in <span className="text-primary">Touch</span></h1>
             <p className="text-xl text-muted-foreground">
-              Have questions? We're here to help. Our team is available 24/7 to support your learning journey.
+              Have questions? We&apos;re here to help. Our team is available 24/7 to support your learning journey.
             </p>
           </div>
         </div>

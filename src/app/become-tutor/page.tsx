@@ -8,7 +8,6 @@ import { motion } from "framer-motion"
 import { TutorApplicationForm } from "@/components/sections/tutor-application-form"
 import { TutorFAQ } from "@/components/sections/tutor-faq"
 import { TutorTestimonials } from "@/components/sections/tutor-testimonials"
-import Link from "next/link"
 
 const benefits = [
   {
@@ -87,7 +86,7 @@ export default function BecomeTutorPage() {
                 Teach the World, <span className="text-primary">Your Way</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
-                Join the world's most elite community of tutors. Share your knowledge, 
+                Join the world&apos;s most elite community of tutors. Share your knowledge, 
                 inspire students, and build a rewarding career on your own terms.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -220,7 +219,7 @@ export default function BecomeTutorPage() {
                </div>
                <div className="mt-12 p-6 rounded-2xl bg-primary/5 border border-primary/10">
                  <p className="text-sm italic text-muted-foreground">
-                   "We value diversity and expertise from all backgrounds. Whether you're a retired professor or a brilliant university student, we want to hear from you."
+                   &quot;We value diversity and expertise from all backgrounds. Whether you&apos;re a retired professor or a brilliant university student, we want to hear from you.&quot;
                  </p>
                </div>
             </div>

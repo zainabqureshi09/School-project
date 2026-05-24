@@ -24,6 +24,7 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
+import { ClassesManagement } from "@/components/dashboard/classes-management"
 import {
   BarChart,
   Bar,
@@ -38,11 +39,11 @@ import { cn } from "@/lib/utils"
 
 const tutorSidebarItems = [
   { label: "Overview", icon: LayoutDashboard, href: "/dashboard/tutor" },
-  { label: "Students", icon: Users, href: "#" },
-  { label: "Sessions", icon: Calendar, href: "#" },
-  { label: "Earnings", icon: DollarSign, href: "#" },
-  { label: "Reviews", icon: Star, href: "#" },
-  { label: "Resources", icon: BookOpen, href: "#" },
+  { label: "Students", icon: Users, href: "/dashboard/tutor/students" },
+  { label: "Sessions", icon: Calendar, href: "/dashboard/tutor/sessions" },
+  { label: "Earnings", icon: DollarSign, href: "/dashboard/tutor/earnings" },
+  { label: "Reviews", icon: Star, href: "/dashboard/tutor/reviews" },
+  { label: "Resources", icon: BookOpen, href: "/dashboard/tutor/resources" },
   { label: "Analytics", icon: BarChart3, href: "#" },
   { label: "Settings", icon: Settings, href: "#" },
 ]
@@ -111,7 +112,7 @@ export default function TutorDashboardPage() {
 
         <div className="grid lg:grid-cols-3 gap-10">
           {/* Earnings Chart */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-12">
              <div className="p-8 rounded-[3rem] bg-background border shadow-sm">
                 <div className="flex justify-between items-center mb-8">
                    <h3 className="text-xl font-bold">Monthly Revenue</h3>
@@ -154,35 +155,8 @@ export default function TutorDashboardPage() {
                 </div>
              </div>
 
-             {/* Student Engagement */}
-             <div className="p-8 rounded-[3rem] bg-background border shadow-sm">
-                <div className="flex justify-between items-center mb-8">
-                   <h3 className="text-xl font-bold">New Booking Requests</h3>
-                   <Badge className="rounded-full bg-red-500 text-white border-none">2 Pending</Badge>
-                </div>
-                <div className="space-y-6">
-                   {[
-                     { name: "John Doe", subject: "Calculus II", time: "Starts tomorrow", image: "https://i.pravatar.cc/150?u=john" },
-                     { name: "Emma Wilson", subject: "Linear Algebra", time: "Next Monday", image: "https://i.pravatar.cc/150?u=emma" },
-                   ].map((request, i) => (
-                     <div key={i} className="flex items-center gap-4 p-4 rounded-3xl bg-accent/30 border border-transparent hover:border-primary/20 transition-all group">
-                        <Avatar className="h-12 w-12 border-2 border-background shadow-md">
-                           <AvatarImage src={request.image} />
-                           <AvatarFallback>{request.name[0]}</AvatarFallback>
-                        </Avatar>
-                        <div className="flex-1 text-left overflow-hidden">
-                           <h4 className="font-bold truncate">{request.name}</h4>
-                           <p className="text-[10px] text-primary font-bold uppercase tracking-widest">{request.subject}</p>
-                        </div>
-                        <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                           <Button size="icon" className="h-9 w-9 rounded-xl bg-primary text-white"><CheckCircle className="h-4 w-4" /></Button>
-                           <Button size="icon" variant="ghost" className="h-9 w-9 rounded-xl text-red-500 hover:bg-red-50"><Plus className="h-4 w-4 rotate-45" /></Button>
-                        </div>
-                     </div>
-                   ))}
-                </div>
-                <Button variant="link" className="w-full mt-8 font-bold text-primary">View All Bookings</Button>
-             </div>
+             {/* Classes Management */}
+             <ClassesManagement />
           </div>
 
           {/* Sidebar Widgets */}

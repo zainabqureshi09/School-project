@@ -1,8 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
-import { GraduationCap, ArrowLeft, Globe } from "lucide-react"
+import { GraduationCap, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -86,7 +85,7 @@ export default function SignupPage() {
           </p>
           
           <p className="text-center text-[10px] text-muted-foreground">
-            By clicking "Create Account", you agree to our <Link href="#" className="underline">Terms of Service</Link> and <Link href="#" className="underline">Privacy Policy</Link>.
+            By clicking &quot;Create Account&quot;, you agree to our <Link href="#" className="underline">Terms of Service</Link> and <Link href="#" className="underline">Privacy Policy</Link>.
           </p>
         </div>
       </div>

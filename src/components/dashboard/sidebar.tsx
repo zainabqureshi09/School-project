@@ -5,18 +5,8 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import { 
-  LayoutDashboard, 
-  User, 
-  MessageSquare, 
-  Calendar, 
-  Settings, 
   LogOut, 
   GraduationCap,
-  Users,
-  DollarSign,
-  Star,
-  BookOpen,
-  ShieldCheck,
   ChevronLeft,
   ChevronRight
 } from "lucide-react"
@@ -25,7 +15,7 @@ import { Button } from "@/components/ui/button"
 
 interface SidebarItem {
   label: string
-  icon: any
+  icon: React.ElementType
   href: string
 }
 

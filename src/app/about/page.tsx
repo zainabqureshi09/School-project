@@ -3,7 +3,7 @@
 import { Navbar } from "@/components/shared/navbar"
 import { Footer } from "@/components/shared/footer"
 import { motion } from "framer-motion"
-import { GraduationCap, Users, Target, Shield } from "lucide-react"
+import { Users, Target, Shield } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -22,7 +22,7 @@ export default function AboutPage() {
           </motion.h1>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
             EduElite was founded on the belief that every student deserves access to world-class 
-            mentorship, regardless of their location. We're building the future of personalized learning.
+            mentorship, regardless of their location. We&apos;re building the future of personalized learning.
           </p>
         </div>
       </section>

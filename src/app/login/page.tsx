@@ -1,8 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
-import { GraduationCap, ArrowLeft, Code2, Globe } from "lucide-react"
+import { GraduationCap, Code2, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -79,7 +78,7 @@ export default function LoginPage() {
           </form>
           
           <p className="text-center text-sm text-muted-foreground">
-            Don't have an account? <Link href="/signup" className="text-primary font-bold">Sign up</Link>
+            Don&apos;t have an account? <Link href="/signup" className="text-primary font-bold">Sign up</Link>
           </p>
         </div>
       </div>

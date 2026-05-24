@@ -8,21 +8,16 @@ import { Badge } from "@/components/ui/badge"
 import { 
   Star, 
   Clock, 
-  GraduationCap, 
   MapPin, 
-  CheckCircle, 
   ShieldCheck, 
-  MessageSquare, 
   Share2, 
   Heart, 
   Play,
   Calendar as CalendarIcon,
-  ChevronRight,
   Award,
   Video,
   ExternalLink,
-  Target,
-  Send
+  Target
 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -38,7 +33,6 @@ import {
 } from "@/components/ui/dialog"
 import { Separator } from "@/components/ui/separator"
 import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
 
 const tutor = {
   id: 1,
@@ -155,7 +149,7 @@ export default function TutorProfilePage() {
                   </div>
                </div>
                <div className="absolute bottom-8 left-8">
-                  <p className="text-white text-xl font-bold">Watch Sarah's Intro</p>
+                  <p className="text-white text-xl font-bold">Watch Sarah&apos;s Intro</p>
                   <p className="text-white/70 text-sm">See her teaching style in action (1:45)</p>
                </div>
             </section>
@@ -175,7 +169,7 @@ export default function TutorProfilePage() {
                     <p className="text-muted-foreground text-lg leading-relaxed">
                       {tutor.bio}
                       <br /><br />
-                      My lessons are highly interactive. I don't just lecture; I engage students with real-world problems and visualization tools. My goal is for you to not only pass your exams but to truly understand and appreciate the beauty of mathematics.
+                      My lessons are highly interactive. I don&apos;t just lecture; I engage students with real-world problems and visualization tools. My goal is for you to not only pass your exams but to truly understand and appreciate the beauty of mathematics.
                     </p>
                   </section>
 
@@ -276,7 +270,7 @@ export default function TutorProfilePage() {
                               </div>
                            </div>
                            <p className="text-muted-foreground">
-                              "Dr. Sarah is an amazing tutor! She helped me understand complex calculus concepts that I had been struggling with for weeks. Her teaching style is very patient and clear."
+                              &quot;Dr. Sarah is an amazing tutor! She helped me understand complex calculus concepts that I had been struggling with for weeks. Her teaching style is very patient and clear.&quot;
                            </p>
                         </div>
                       ))}
@@ -355,7 +349,7 @@ export default function TutorProfilePage() {
                         </div>
                         <DialogTitle className="text-3xl font-black">Confirm Booking</DialogTitle>
                         <DialogDescription className="text-lg">
-                           You're booking a 1-hour session with <span className="text-foreground font-bold">{tutor.name}</span>
+                           You&apos;re booking a 1-hour session with <span className="text-foreground font-bold">{tutor.name}</span>
                         </DialogDescription>
                      </DialogHeader>
                      
@@ -385,7 +379,7 @@ export default function TutorProfilePage() {
                      </div>
 
                      <p className="text-[10px] text-center text-muted-foreground mt-4">
-                        By confirming, you agree to EduElite's <span className="underline">Cancellation Policy</span> and <span className="underline">Terms of Service</span>.
+                        By confirming, you agree to EduElite&apos;s <span className="underline">Cancellation Policy</span> and <span className="underline">Terms of Service</span>.
                      </p>
                   </DialogContent>
                </Dialog>
@@ -406,7 +400,7 @@ export default function TutorProfilePage() {
             <div className="p-8 rounded-[2.5rem] bg-primary text-white overflow-hidden relative">
                <div className="absolute top-0 right-0 w-1/2 h-full bg-white/10 skew-x-[-20deg] translate-x-1/2" />
                <div className="relative z-10">
-                  <h4 className="font-bold mb-4 opacity-80">Sarah's Performance</h4>
+                  <h4 className="font-bold mb-4 opacity-80">Sarah&apos;s Performance</h4>
                   <div className="space-y-6">
                      <div>
                         <div className="flex justify-between text-sm font-bold mb-2">
